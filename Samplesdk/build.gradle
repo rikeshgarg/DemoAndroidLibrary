@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+//    signingConfigs {
+//        release {
+//            storeFile file("${rootProject.projectDir}/aarsign.keystore")
+//            storePassword "mypassword"
+//            keyAlias "aarsign"
+//            keyPassword "mypassword"
+//        }
+//    }
+
+//    tasks.whenTaskAdded { task ->
+//        if (task.name == 'assembleRelease') {
+//            def aarPath = "${project.buildDir}/outputs/aar/XXX-release.aar"
+//
+//            task.doLast {
+//                ant.signjar(
+//                        alias: android.signingConfigs.release.keyAlias,
+//                        jar: aarPath,
+//                        keystore: android.signingConfigs.release.storeFile,
+//                        storepass: android.signingConfigs.release.storePassword,
+//                        keypass: android.signingConfigs.release.keyPassword,
+//                        preservelastmodified: 'true')
+//
+//                ant.verifyjar(
+//                        alias: android.signingConfigs.release.keyAlias,
+//                        jar: aarPath,
+//                        keystore: android.signingConfigs.release.storeFile,
+//                        storepass: android.signingConfigs.release.storePassword,
+//                        keypass: android.signingConfigs.release.keyPassword)
+//            }
+//        }
+//    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            //proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+           // minifyEnabled true
+            //proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'library.pro'
+// Enables obfuscation, code-shrinking and optimization
+            minifyEnabled true
+            // Enables resource shrinking, removing unused resources
+            //shrinkResources true
+            // Includes the Android Gradle plugin default rules, with proguard-rules.pro containing app-specific rules
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

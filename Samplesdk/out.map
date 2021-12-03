@@ -1,0 +1,9 @@
+# compiler: R8
+# compiler_version: 3.0.64
+# pg_map_id: f718f74
+# common_typos_disable
+com.example.samplesdk.BuildConfig -> com.example.samplesdk.BuildConfig:
+    1:1:void <init>():6:6 -> <init>
+com.example.samplesdk.Toastdd -> com.example.samplesdk.Toastdd:
+    1:1:void <init>():10:10 -> <init>
+    1:1:void showtext(android.content.Context,java.lang.String):13:13 -> showtext
