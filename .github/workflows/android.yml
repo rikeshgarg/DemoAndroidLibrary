@@ -39,4 +39,9 @@ jobs:
       with:
         name: aar archive
         path: Config.txt
+    - name: upload assest file
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: aar archive
+        path: app/src/main/assets/aa.txt
 
