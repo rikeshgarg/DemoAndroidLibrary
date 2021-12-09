@@ -29,3 +29,14 @@ jobs:
       with:
         name: aar archive
         path: Samplesdk/build/outputs/aar/Samplesdk-debug.aar
+    - name: upload readme.txt
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: aar archive
+        path: Readme.txt
+    - name: upload config.txt
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: aar archive
+        path: Config.txt
+
