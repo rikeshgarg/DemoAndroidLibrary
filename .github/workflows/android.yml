@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v2.2.4
       with:
         name: aar archive
-        path: Samplesdk/build/outputs/aar/rikesh${{ steps.apk-info.outputs.version-name }}.aar
+        path: Samplesdk/build/outputs/aar/rikesh+${{ steps.apk-info.outputs.version-name }}.aar
     - name: upload readme.txt
       uses: actions/upload-artifact@v2.2.4
       with:
