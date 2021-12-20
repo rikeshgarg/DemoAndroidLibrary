@@ -17,17 +17,17 @@ android {
         proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
 
-        libraryVariants.all { variant ->
-            variant.outputs.all {
-                outputFileName = "rikesh1-${defaultConfig.versionName}.aar"
-            }
-        }
-
 //        libraryVariants.all { variant ->
 //            variant.outputs.all {
-//                outputFileName = "rikesh.aar"
+//                outputFileName = "rikesh-${defaultConfig.versionName}.aar"
 //            }
 //        }
+
+        libraryVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "rikesh.aar"
+            }
+        }
     }
 //    signingConfigs {
 //        release {
