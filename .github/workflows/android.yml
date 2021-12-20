@@ -46,9 +46,8 @@ jobs:
       with:
         name: aar archive
         path: app/src/main/assets/aa.txt
-    - name: get tag name 
+    - uses: olegtarasov/get-tag@v2.1
       id: tagName
-      uses: olegtarasov/get-tag@v2.1
       with:
         tagRegex: "(?<package>.*)-(?<version>.*)" 
     - name: Some other step # Output usage example
