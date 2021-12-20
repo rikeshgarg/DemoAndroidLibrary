@@ -9,17 +9,25 @@ android {
         minSdk 21
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
         proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
+
         libraryVariants.all { variant ->
             variant.outputs.all {
-                outputFileName = "rikesh.aar"
+                outputFileName = "rikesh1-${defaultConfig.versionName}.aar"
             }
         }
+
+//        libraryVariants.all { variant ->
+//            variant.outputs.all {
+//                outputFileName = "rikesh.aar"
+//            }
+//        }
     }
 //    signingConfigs {
 //        release {
