@@ -49,14 +49,6 @@ jobs:
     - name: Get the version
       id: get_version
       run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-    - uses: olegtarasov/get-tag@v2.1
-      id: tagName
-      with:
-        tagRegex: "(?<package>.*)-(?<version>.*)" 
-    - name: Some other step # Output usage example
-      with:
-        dirname: ${{ steps.tagName.outputs.package }}
-        tagname: ${{ steps.tagName.outputs.version }}
     - name: get tag name 
       id: tagName
       uses: olegtarasov/get-tag@v2.1
@@ -65,7 +57,7 @@ jobs:
     - name: Some other step # Output usage example
       with:
         dirname: ${{ steps.tagName.outputs.package }}
-          tagname: ${{ steps.tagName.outputs.version }}
+        tagname: ${{ steps.tagName.outputs.version }}
        
     
       
