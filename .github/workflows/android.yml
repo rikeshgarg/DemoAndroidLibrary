@@ -36,6 +36,15 @@ jobs:
       with:
         name: aar archive
         path: Readme.txt
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: TODO
+        draft: true
+        prerelease: false
     - name: upload config.txt
       uses: actions/upload-artifact@v2.2.4
       with:
@@ -44,7 +53,7 @@ jobs:
     - name: upload assest file
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: aar archive ${{ github.ref }}
+        name: aar archive
         path: app/src/main/assets/aa.txt
       
 
