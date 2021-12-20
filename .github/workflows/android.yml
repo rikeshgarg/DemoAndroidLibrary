@@ -48,7 +48,7 @@ jobs:
         path: app/src/main/assets/aa.txt
     - name: Get tag
       id: tag
-      uses: JanneMattila/get-version-from-tag@v1
+      uses: olegtarasov/get-tag@v2.1
     - name: Use tag
       run: echo ${{steps.tag.outputs.tag}}
       
