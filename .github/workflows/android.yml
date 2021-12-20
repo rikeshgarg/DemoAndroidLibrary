@@ -44,10 +44,7 @@ jobs:
     - name: upload assest file
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: aar archive
+        name: aar archive ${{ github.ref }}
         path: app/src/main/assets/aa.txt
-    - name: Check output
-      run: |
-        echo ${{ steps.vars.outputs.tag }}
       
 
