@@ -45,6 +45,9 @@ jobs:
       with:
         name: aar archive
         path: app/src/main/assets/aa.txt
+    - name: Get the version
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
        
     
       
