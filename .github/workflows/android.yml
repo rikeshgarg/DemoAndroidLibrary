@@ -23,8 +23,6 @@ jobs:
     - name: get tag name
       id: tagname
       uses: olegtarasov/get-tag@v2.1
-      with:
-        strip_v: true
     - name: Use tag
       run: echo ${{steps.tagname.outputs.tag}}
     - name: Use tag
