@@ -20,9 +20,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: get tag name
+    - name: Get version from tag
       id: tagname
-      uses: olegtarasov/get-tag@v2.1
+      uses: JanneMattila/get-version-from-tag@v1
     - name: Use tag
       run: echo ${{steps.tagname.outputs.tag}}
     - name: Use tag
