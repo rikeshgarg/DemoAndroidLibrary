@@ -2,11 +2,9 @@ name: Android CI
 
 on:
   push:
-    branches: [ main ]
-    tags:
-      - 'v1.0.0'
+    branches: [ ArkoseLabsKit-v0.1.0-beta ]
   pull_request:
-    branches: [ main ]
+    branches: [ ArkoseLabsKit-v0.1.0-beta ]
   
 jobs:
   build:
