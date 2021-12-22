@@ -29,22 +29,22 @@ jobs:
     - name: Upload aar
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: aar archive ${{github.ref_name}}
+        name: ${{github.ref_name}}
         path: Samplesdk/build/outputs/aar/rikesh.aar
     - name: upload readme.txt
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: aar archive
+        name: ${{github.ref_name}}
         path: Readme.txt
     - name: upload config.txt
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: aar archive
+        name: ${{github.ref_name}}
         path: Config.txt
     - name: upload assest file
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: aar archive
+        name: ${{github.ref_name}}
         path: app/src/main/assets/aa.txt
   
        
